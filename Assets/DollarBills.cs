@@ -13,22 +13,22 @@ public class DollarBills : MonoBehaviour
     public int HowMuchLeft = 0;
     void Start()
     {
-        HowHundred();
+        HowHundred();   //calls the first one
 
     }
 
     void HowHundred()
     {
-        numberofHundred = amountPaid / 100;
+        numberofHundred = amountPaid / 100;  //figure out how many hundred dollar bills there are
 
-        HowMuchLeft = amountPaid - (numberofHundred * 100);
+        HowMuchLeft = amountPaid - (numberofHundred * 100);  //figures out how much money is leftover
         
         if (HowMuchLeft > 0)
         {
-            HowFifty();
+            HowFifty();       //go calculate how much of the next bill there is
         }
-        else { BillCount(); }
-    }
+        else { BillCount(); }      //give amount of each bill there is 
+    }                           //repeat notes for each function
     void HowFifty()
     {
         numberofFifty = HowMuchLeft / 50;
@@ -81,7 +81,7 @@ public class DollarBills : MonoBehaviour
     void BillCount()
     {
        Debug.Log("You have " +numberofHundred+ " $100 bills, " +numberofFifty+ " $50 bills, " +numberofTwenty+ " $20 bills, " +numberofTen+ " $10 bills, " +numberofFive+ " $5 bills, and " +numberofOne+ " $1 bills.");
-
+        //output tells how much of each bill there is 
     }
     
     
